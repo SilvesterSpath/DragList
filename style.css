@@ -2,8 +2,8 @@
 
 :root {
   --border-color: #e3e5e4;
-  --background-color: #c3c7ca;
-  --text-color: #34444f;
+  --background-color: #e47d6b;
+  --text-color: #2c2c2c;
 }
 
 * {
@@ -11,7 +11,7 @@
 }
 
 body {
-  background-color: rgb(161, 199, 224);
+  background-color: #f7eff4;
   font-family: 'Lato', sans-serif;
   display: flex;
   flex-direction: column;
@@ -19,6 +19,11 @@ body {
   justify-content: flex-start;
   height: 100vh;
   margin: 0;
+}
+
+h1 {
+  color: #2c2c2c;
+  text-align: center;
 }
 
 .draggable-list {
@@ -32,6 +37,7 @@ body {
   background-color: white;
   display: flex;
   flex: 1;
+  color: #4c6775;
 }
 
 .draggable-list li:not(:last-of-type) {
