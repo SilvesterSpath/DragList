@@ -83,8 +83,10 @@ function dragDrop() {
   const dragEndIndex = +this.getAttribute('data-index');
   swapItems(dragStartIndex, dragEndIndex);
   this.classList.remove('over');
+  checkOder();
 }
 
+// swap listitems that are drag&drop
 function swapItems(fromIdx, toIdx) {
   const itemOne = listItems[fromIdx].querySelector('.draggable');
   const itemTwo = listItems[toIdx].querySelector('.draggable');
@@ -92,6 +94,20 @@ function swapItems(fromIdx, toIdx) {
   const temp = itemOne.innerHTML;
   itemOne.innerHTML = itemTwo.innerHTML;
   itemTwo.innerHTML = temp;
+}
+
+// check the order of list items
+function checkOder() {
+  listItems.forEach((i, idx) => {
+    const personName = i.querySelector('.person-name').innerText;
+    if (personName === richestPeople[idx]) {
+      i.classList.remove('wrong');
+      i.classList.add('right');
+    } else {
+      i.classList.remove('right');
+      i.classList.add('wrong');
+    }
+  });
 }
 
 function addEventListeners() {
@@ -109,3 +125,5 @@ function addEventListeners() {
     i.addEventListener('dragleave', dragLeave);
   });
 }
+
+check.addEventListener('click', checkOder);
